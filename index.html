@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ちびポニ占い｜ミニチュアポニーの毎日12星座ランキング</title>
+<meta name="description" content="ミニチュアポニーたちが毎朝お届けする、12星座の今日の運勢ランキング。恋愛・仕事・金運・健康運と、ラッキーカラー・ラッキーアイテムも。">
+<meta name="theme-color" content="#fff4e6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- OGP（公開URLが決まったら og:url と og:image を絶対URLに書き換えてください） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ちびポニ占い｜今日の12星座ランキング">
+<meta property="og:description" content="ミニチュアポニーたちが毎朝お届けする、12星座の今日の運勢。">
+<meta property="og:image" content="https://YOUR-NAME.github.io/pony-uranai/ogp.png">
+<meta property="og:url" content="https://YOUR-NAME.github.io/pony-uranai/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-pony" id="heroPony" aria-hidden="true"></div>
+  <p class="eyebrow">ミニチュアポニーの毎日占い</p>
+  <h1>ちびポニ占い</h1>
+  <div class="datebar">
+    <button class="nav" id="prevDay" aria-label="前の日">‹</button>
+    <p class="date" id="dateLabel"></p>
+    <button class="nav" id="nextDay" aria-label="次の日">›</button>
+  </div>
+  <p class="update">毎日 0:00（日本時間）に更新</p>
+</header>
+
+<main>
+  <section class="card pick">
+    <h2>あなたの星座は？</h2>
+    <div class="pick-row">
+      <label for="birthday">誕生日から探す</label>
+      <input type="date" id="birthday">
+    </div>
+    <p class="hint">星座をタップすると詳しい運勢が見られます。選んだ星座は次回も覚えておきます。</p>
+  </section>
+
+  <section class="card daypony" id="dayPony"></section>
+
+  <section aria-labelledby="rankTitle">
+    <h2 id="rankTitle" class="section-title">今日の12星座ランキング</h2>
+    <ol class="ranking" id="ranking"></ol>
+  </section>
+</main>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <div class="detail-inner" id="detailBody"></div>
+  <button class="close" id="closeDetail" aria-label="閉じる">×</button>
+</dialog>
+
+<footer>
+  <p>占いは楽しみとしてご覧ください。</p>
+  <p>© <span id="year"></span> ちびポニ占い</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

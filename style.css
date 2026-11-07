@@ -1,0 +1,117 @@
+:root{
+  --bg:#fff7ec; --bg2:#fdebd6; --card:#ffffff; --ink:#4a3428; --ink2:#8a6f5e;
+  --accent:#e9826b; --accent2:#f6c35b; --line:#f0dcc7; --me:#fff1c9;
+  --star:#f4a93b; --star-off:#ead9c6; --shadow:0 6px 20px rgba(140,90,50,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#2a211c; --bg2:#33281f; --card:#3a2e26; --ink:#f8eadb; --ink2:#cdb49f;
+    --accent:#f29a84; --accent2:#f6c35b; --line:#4d3d32; --me:#55452a;
+    --star:#f6b44a; --star-off:#5a4a3d; --shadow:0 6px 20px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#2a211c; --bg2:#33281f; --card:#3a2e26; --ink:#f8eadb; --ink2:#cdb49f;
+  --accent:#f29a84; --accent2:#f6c35b; --line:#4d3d32; --me:#55452a;
+  --star:#f6b44a; --star-off:#5a4a3d; --shadow:0 6px 20px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
+  color:var(--ink); background:var(--bg);
+  background-image:radial-gradient(circle at 10% 0%,var(--bg2) 0,transparent 40%),
+                   radial-gradient(circle at 90% 20%,var(--bg2) 0,transparent 35%);
+  line-height:1.7; font-weight:500;
+}
+main,footer{max-width:720px;margin:0 auto;padding:0 16px}
+button{font:inherit;color:inherit}
+
+/* hero */
+.hero{text-align:center;padding:24px 16px 8px}
+.hero-pony{width:150px;margin:0 auto;animation:bob 2.4s ease-in-out infinite}
+.hero-pony svg{width:100%;height:auto;display:block}
+@keyframes bob{50%{transform:translateY(-5px)}}
+@media (prefers-reduced-motion: reduce){.hero-pony{animation:none}}
+.eyebrow{margin:4px 0 0;color:var(--accent);font-weight:700;font-size:.85rem;letter-spacing:.1em}
+h1{margin:0;font-size:clamp(2rem,8vw,2.8rem);font-weight:900;letter-spacing:.04em}
+.datebar{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px}
+.date{margin:0;font-weight:700;font-size:1.05rem;min-width:11em}
+.nav{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);background:var(--card);
+  font-size:1.3rem;line-height:1;cursor:pointer}
+.nav:disabled{opacity:.3;cursor:default}
+.update{margin:2px 0 0;font-size:.75rem;color:var(--ink2)}
+
+/* cards */
+.card{background:var(--card);border-radius:20px;padding:18px 18px;margin:16px 0;box-shadow:var(--shadow)}
+.card h2{margin:0 0 8px;font-size:1.05rem}
+.pick-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pick-row input{font:inherit;padding:6px 10px;border-radius:10px;border:2px solid var(--line);
+  background:var(--bg);color:var(--ink)}
+.hint{margin:8px 0 0;font-size:.8rem;color:var(--ink2)}
+
+.daypony{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,var(--card),var(--bg2))}
+.daypony .pv{flex:0 0 96px}
+.daypony .pv svg{width:100%;height:auto}
+.daypony h2{margin:0}
+.daypony p{margin:4px 0 0;font-size:.92rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--accent);
+  border-radius:99px;padding:1px 10px;margin-bottom:4px}
+
+.section-title{font-size:1.15rem;margin:24px 4px 8px}
+
+/* ranking */
+.ranking{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+.rank-item button{
+  width:100%;display:grid;grid-template-columns:48px 64px 1fr auto;align-items:center;gap:10px;
+  background:var(--card);border:2px solid transparent;border-radius:18px;padding:8px 14px 8px 8px;
+  text-align:left;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s}
+.rank-item button:hover{transform:translateY(-2px)}
+.rank-item.me button{border-color:var(--accent2);background:var(--me)}
+.rk{font-size:1.5rem;font-weight:900;text-align:center;color:var(--ink2)}
+.rk small{font-size:.7rem}
+.rank-item:nth-child(1) .rk{color:#e0a400}
+.rank-item:nth-child(2) .rk{color:#9aa5b1}
+.rank-item:nth-child(3) .rk{color:#c58350}
+.rank-item .pv svg{width:64px;height:auto;display:block}
+.sign{font-weight:900;font-size:1.05rem}
+.sign .sym{color:var(--accent);margin-right:2px}
+.one{font-size:.8rem;color:var(--ink2);display:block;line-height:1.45}
+.total{font-size:.9rem;color:var(--star);white-space:nowrap;letter-spacing:-1px}
+.me-badge{font-size:.65rem;background:var(--accent2);color:#5a3a00;border-radius:99px;padding:0 7px;margin-left:6px;vertical-align:2px}
+@media (max-width:420px){
+  .rank-item button{grid-template-columns:38px 52px 1fr;padding-right:10px}
+  .rank-item .pv svg{width:52px}
+  .total{grid-column:3;font-size:.8rem}
+}
+
+/* detail */
+dialog{border:none;border-radius:24px;padding:0;width:min(560px,calc(100% - 32px));
+  max-height:calc(100% - 32px);background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(60,35,20,.45)}
+.detail-inner{padding:24px 20px 20px}
+.close{position:absolute;top:10px;right:12px;width:36px;height:36px;border-radius:50%;
+  border:none;background:var(--bg2);font-size:1.3rem;cursor:pointer}
+.d-head{display:flex;gap:12px;align-items:center}
+.d-head .pv{flex:0 0 110px}
+.d-head .pv svg{width:100%;height:auto}
+.d-rank{font-weight:900;color:var(--accent);margin:0}
+.d-head h3{margin:0;font-size:1.4rem}
+.d-head .pname{margin:0;font-size:.8rem;color:var(--ink2)}
+.d-msg{background:var(--bg);border-radius:14px;padding:12px 14px;margin:14px 0}
+.d-msg p{margin:0}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;margin:0;padding:0;list-style:none}
+.scores li{display:flex;justify-content:space-between;font-size:.92rem}
+.stars{color:var(--star);letter-spacing:-1px}
+.stars .off{color:var(--star-off)}
+.lucky{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:14px 0;font-size:.92rem}
+.lucky dt{color:var(--ink2)}
+.lucky dd{margin:0;font-weight:700}
+.swatch{display:inline-block;width:.9em;height:.9em;border-radius:50%;vertical-align:-1px;margin-right:4px;border:1px solid var(--line)}
+.ponytalk{display:flex;gap:8px;align-items:flex-start;font-size:.9rem}
+.ponytalk b{white-space:nowrap;color:var(--accent)}
+.share{display:block;width:100%;margin-top:16px;padding:12px;border:none;border-radius:14px;
+  background:var(--ink);color:var(--bg);font-weight:700;cursor:pointer;text-align:center;text-decoration:none}
+
+footer{text-align:center;font-size:.75rem;color:var(--ink2);padding:16px 16px 32px}
+footer p{margin:2px 0}
