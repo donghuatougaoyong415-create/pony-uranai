@@ -29,12 +29,15 @@ button{font:inherit;color:inherit}
 
 /* hero */
 .hero{text-align:center;padding:24px 16px 8px}
-.hero-pony{width:150px;margin:0 auto;animation:bob 2.4s ease-in-out infinite}
-.hero-pony svg{width:100%;height:auto;display:block}
+.hero-pony{width:min(260px,70vw);margin:0 auto;position:relative}
+.hero-pony .pimg{animation:bob 3s ease-in-out infinite}
+.hero-badge{display:inline-block;margin-top:-4px;font-family:"Klee One",serif;font-size:.85rem;background:var(--card);border:1.5px dashed var(--accent);color:var(--accent);border-radius:99px;padding:1px 12px}
 @keyframes bob{50%{transform:translateY(-5px)}}
-@media (prefers-reduced-motion: reduce){.hero-pony{animation:none}}
+@media (prefers-reduced-motion: reduce){.hero-pony .pimg{animation:none}}
 .eyebrow{margin:4px 0 0;color:var(--accent);font-weight:700;font-size:.85rem;letter-spacing:.1em}
-h1{margin:0;font-size:clamp(2rem,8vw,2.8rem);font-weight:900;letter-spacing:.04em}
+h1{margin:0;font-family:"Klee One",serif;font-weight:600;font-size:clamp(2.2rem,9vw,3rem);letter-spacing:.06em}
+h2,.section-title,.d-head h3,.gallery b{font-family:"Klee One",serif;font-weight:600}
+.pimg{display:block;width:100%;height:auto}
 .datebar{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:6px}
 .date{margin:0;font-weight:700;font-size:1.05rem;min-width:11em}
 .nav{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);background:var(--card);
@@ -51,8 +54,7 @@ h1{margin:0;font-size:clamp(2rem,8vw,2.8rem);font-weight:900;letter-spacing:.04e
 .hint{margin:8px 0 0;font-size:.8rem;color:var(--ink2)}
 
 .daypony{display:flex;gap:14px;align-items:center;background:linear-gradient(135deg,var(--card),var(--bg2))}
-.daypony .pv{flex:0 0 96px}
-.daypony .pv svg{width:100%;height:auto}
+.daypony .pv{flex:0 0 120px}
 .daypony h2{margin:0}
 .daypony p{margin:4px 0 0;font-size:.92rem}
 .tag{display:inline-block;font-size:.72rem;font-weight:700;color:#fff;background:var(--accent);
@@ -63,25 +65,26 @@ h1{margin:0;font-size:clamp(2rem,8vw,2.8rem);font-weight:900;letter-spacing:.04e
 /* ranking */
 .ranking{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
 .rank-item button{
-  width:100%;display:grid;grid-template-columns:48px 64px 1fr auto;align-items:center;gap:10px;
+  width:100%;display:grid;grid-template-columns:44px 80px 1fr auto;align-items:center;gap:10px;
   background:var(--card);border:2px solid transparent;border-radius:18px;padding:8px 14px 8px 8px;
   text-align:left;cursor:pointer;box-shadow:var(--shadow);transition:transform .15s}
 .rank-item button:hover{transform:translateY(-2px)}
 .rank-item.me button{border-color:var(--accent2);background:var(--me)}
 .rk{font-size:1.5rem;font-weight:900;text-align:center;color:var(--ink2)}
 .rk small{font-size:.7rem}
+.rk{white-space:nowrap;font-size:1.35rem}
 .rank-item:nth-child(1) .rk{color:#e0a400}
 .rank-item:nth-child(2) .rk{color:#9aa5b1}
 .rank-item:nth-child(3) .rk{color:#c58350}
-.rank-item .pv svg{width:64px;height:auto;display:block}
+.rank-item .pv{width:80px}
 .sign{font-weight:900;font-size:1.05rem}
 .sign .sym{color:var(--accent);margin-right:2px}
 .one{font-size:.8rem;color:var(--ink2);display:block;line-height:1.45}
 .total{font-size:.9rem;color:var(--star);white-space:nowrap;letter-spacing:-1px}
 .me-badge{font-size:.65rem;background:var(--accent2);color:#5a3a00;border-radius:99px;padding:0 7px;margin-left:6px;vertical-align:2px}
 @media (max-width:420px){
-  .rank-item button{grid-template-columns:38px 52px 1fr;padding-right:10px}
-  .rank-item .pv svg{width:52px}
+  .rank-item button{grid-template-columns:42px 66px 1fr;padding-right:10px}
+  .rank-item .pv{width:66px}
   .total{grid-column:3;font-size:.8rem}
 }
 
@@ -93,8 +96,7 @@ dialog::backdrop{background:rgba(60,35,20,.45)}
 .close{position:absolute;top:10px;right:12px;width:36px;height:36px;border-radius:50%;
   border:none;background:var(--bg2);font-size:1.3rem;cursor:pointer}
 .d-head{display:flex;gap:12px;align-items:center}
-.d-head .pv{flex:0 0 110px}
-.d-head .pv svg{width:100%;height:auto}
+.d-head .pv{flex:0 0 140px}
 .d-rank{font-weight:900;color:var(--accent);margin:0}
 .d-head h3{margin:0;font-size:1.4rem}
 .d-head .pname{margin:0;font-size:.8rem;color:var(--ink2)}
@@ -113,5 +115,13 @@ dialog::backdrop{background:rgba(60,35,20,.45)}
 .share{display:block;width:100%;margin-top:16px;padding:12px;border:none;border-radius:14px;
   background:var(--ink);color:var(--bg);font-weight:700;cursor:pointer;text-align:center;text-decoration:none}
 
+.trait{font-size:.8rem!important;color:var(--ink2);margin:0!important}
+.gal-hint{margin:-4px 4px 10px}
+.gallery{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.gallery li{background:var(--card);border-radius:18px;padding:10px 12px 12px;box-shadow:var(--shadow);text-align:center;display:flex;flex-direction:column}
+.gallery .pv{max-width:170px;margin:0 auto}
+.gallery b{font-size:1rem}
+.gk{font-size:.72rem;color:var(--accent);font-weight:700}
+.gt{font-size:.75rem;color:var(--ink2);line-height:1.5;margin-top:2px}
 footer{text-align:center;font-size:.75rem;color:var(--ink2);padding:16px 16px 32px}
 footer p{margin:2px 0}

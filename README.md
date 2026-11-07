@@ -13,9 +13,10 @@
 |---|---|
 | index.html | ページ本体 |
 | style.css | デザイン（ダークモード対応） |
-| app.js | 占いの生成ロジック・ポニーのイラスト |
+| app.js | 占いの生成ロジック |
+| img/ | ポニー12頭のイラスト（Geminiで生成、背景を透過したWebP。ファイル名は星座のID） |
 | ogp.png | SNSでシェアされたときの画像 |
-| favicon.svg / apple-touch-icon.png | アイコン |
+| favicon.png / apple-touch-icon.png | アイコン |
 
 ## GitHub Pages で公開する手順（約5分）
 1. https://github.com にログインし、右上「+」→「New repository」。
@@ -31,7 +32,8 @@
 ## カスタマイズのしかた（app.js）
 - `MSG`：運勢メッセージ。top＝1〜3位、mid＝4〜8位、low＝9〜12位。**各グループの文を増やすほど、毎日のバリエーションが増えます**（mid は最低5個、low は最低4個必要）。
 - `ITEMS` / `COLORS` / `PLACES` / `PONY_TALK`：ラッキーアイテムなどの候補。自由に追加OK。
-- `SIGNS` の `pony`：各星座の担当ポニーの名前・毛色（coat）・たてがみ色（mane）。
+- `SIGNS` の `pony`：各星座の担当ポニーの名前・毛色・性格。
+- イラストを差し替えるときは `img/` の同じ名前のファイルを上書きします（横480px前後、背景透過のWebPかPNG推奨）。
 
 ## 公開後のおすすめ
 - **独自ドメイン**：Settings → Pages → Custom domain で設定できます（ドメイン代のみ）。
