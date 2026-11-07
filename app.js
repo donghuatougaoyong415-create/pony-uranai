@@ -69,7 +69,7 @@ const ITEMS=["にんじん柄のもの","角砂糖","蹄鉄モチーフのアク
 const PLACES=["公園","カフェ","本屋","駅のホーム","パン屋","川沿いの道","図書館","花屋","コンビニ","ベランダ","雑貨屋","自分の部屋"];
 
 /* ポニーのイラスト（img/星座id.webp） */
-const ponyImg=(s,cls="")=>`<img class="pimg ${cls}" src="img/${s.id}.webp" alt="ミニチュアポニーの${s.pony.name}" width="480" height="384" loading="lazy" decoding="async">`;
+const ponyImg=(s,cls="")=>`<img class="pimg ${cls}" src="${s.id}.webp" alt="ミニチュアポニーの${s.pony.name}" width="480" height="384" loading="lazy" decoding="async">`;
 
 /* ---------- 日付（日本時間） ---------- */
 const jstToday=()=>new Date().toLocaleDateString("sv-SE",{timeZone:"Asia/Tokyo"});
